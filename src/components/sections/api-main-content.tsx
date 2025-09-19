@@ -110,7 +110,7 @@ const ApiMainContent = () => {
               type="button"
               aria-label="Dismiss security notice"
               onClick={() => setSecurityNoticeCollapsed(true)}
-              className="absolute top-2 left-2 inline-grid place-items-center h-7 w-7 rounded-full text-text-secondary hover:text-foreground hover:bg-muted/50 transition-transform duration-200 hover:scale-110"
+              className="absolute -top-3 -left-3 z-10 inline-grid place-items-center h-7 w-7 rounded-full text-text-secondary hover:text-foreground hover:bg-muted/50 transition-transform duration-200 hover:scale-110"
             >
               <X className="h-4 w-4" />
             </button>
