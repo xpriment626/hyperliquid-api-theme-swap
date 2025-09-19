@@ -21,7 +21,7 @@ import {
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { Card } from "@/components/ui/card";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
-import { ChevronDown, CheckCircle2, Info, ShieldAlert, Sparkles, Zap } from "lucide-react";
+import { ChevronDown, CheckCircle2, Info, ShieldAlert, Sparkles, Zap, X } from "lucide-react";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 
 // Minimal inline helpers and progressive onboarding for empty state
@@ -105,17 +105,20 @@ const ApiMainContent = () => {
       <div className="max-w-7xl mx-auto space-y-8" ref={topRef}>
         {/* Security Notice Banner */}
         {!securityNoticeCollapsed && (
-          <Alert className="bg-accent border-border">
+          <Alert className="relative bg-accent border-border">
+            <button
+              type="button"
+              aria-label="Dismiss security notice"
+              onClick={() => setSecurityNoticeCollapsed(true)}
+              className="absolute top-2 left-2 inline-grid place-items-center h-7 w-7 rounded-full text-text-secondary hover:text-foreground hover:bg-muted/50 transition-transform duration-200 hover:scale-110"
+            >
+              <X className="h-4 w-4" />
+            </button>
             <ShieldAlert className="h-4 w-4" />
             <AlertTitle>Security notice</AlertTitle>
             <AlertDescription>
               API wallets can execute trades with your capital. Only share credentials with trusted applications. Keys cannot be recovered if lost.
             </AlertDescription>
-            <div className="mt-3">
-              <Button size="sm" variant="secondary" onClick={() => setSecurityNoticeCollapsed(true)}>
-                Dismiss
-              </Button>
-            </div>
           </Alert>
         )}
 
