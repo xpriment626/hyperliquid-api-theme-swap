@@ -42,24 +42,6 @@ const Footer: React.FC = () => {
             </a>
           </nav>
         </div>
-
-        <div className="max-w-xs text-left">
-          <h2 className="text-lg font-semibold text-text-primary">
-            Status embed installed correctly
-          </h2>
-          <p className="mt-2 text-base text-muted-foreground">
-            This will be shown if an incident or maintenance is posted on your
-            status page.
-          </p>
-          <a
-            href="https://hyperliquid.statuspage.io/?utm_source=embed"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-4 inline-block text-base font-medium text-secondary transition-opacity hover:opacity-80"
-          >
-            View latest updates
-          </a>
-        </div>
       </div>
     </footer>
   );
